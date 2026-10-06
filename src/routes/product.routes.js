@@ -10,7 +10,8 @@ const SchemaValidator = require("../validator/product.validator");
 
 
 
-Route.get("/product", productController.findAll);
+// Route.get("/product", productController.findAll);
+Route.get('/products', productController.findAll)
 Route.post("/product/create",Validation.validate(SchemaValidator.CreatesProductchema), productController.create);
 Route.get("/product/:id", productController.findOne);
 Route.put("/product/:id",Validation.validate(SchemaValidator.CreatesProductchema), productController.update);

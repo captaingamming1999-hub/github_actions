@@ -19,19 +19,19 @@ class ProductController {
         }
     }
 
-    // async findAll(req, res, next) {
-    //     try {
+    async findAll(req, res, next) {
+        try {
 
-    //         const products = await ProductService.findAll();
-    //         res.status(200).json({
-    //             success: true,
-    //             data: products
-    //         });
+            const products = await ProductService.findAll();
+            res.status(200).json({
+                success: true,
+                data: products
+            });
 
-    //     } catch (error) {
-    //         next(error);
-    //     }
-    // }
+        } catch (error) {
+            next(error);
+        }
+    }
 
     async findOne(req, res, next) {
         try {
@@ -67,20 +67,20 @@ class ProductController {
         }
     }
 
-    // async delete(req, res, next) {
-    //     try {
+    async delete(req, res, next) {
+        try {
 
-    //         await ProductService.delete(req.params.id);
+            await ProductService.delete(req.params.id);
 
-    //         res.status(200).json({
-    //             success: true,
-    //             message: "Product deleted successfully"
-    //         });
+            res.status(200).json({
+                success: true,
+                message: "Product deleted successfully"
+            });
 
-    //     } catch (error) {
-    //         next(error);
-    //     }
-    // }
+        } catch (error) {
+            next(error);
+        }
+    }
 
 }
 
