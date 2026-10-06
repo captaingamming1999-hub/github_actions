@@ -3,7 +3,7 @@ const ProductService = require("../services/product.service");
 
 class ProductController {
 
-    async createProduct(req, res, next) {
+    async create(req, res, next) {
         try {
 
             const product = await ProductService.create(req.body);

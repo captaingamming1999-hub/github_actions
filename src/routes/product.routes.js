@@ -11,7 +11,7 @@ const SchemaValidator = require("../validator/product.validator");
 
 
 Route.get("/product", productController.findAll);
-Route.post("/product/create",Validation.validate(SchemaValidator.CreatesProductchema), productController.createProduct);
+Route.post("/product/create",Validation.validate(SchemaValidator.CreatesProductchema), productController.create);
 Route.get("/product/:id", productController.findOne);
 Route.put("/product/:id",Validation.validate(SchemaValidator.CreatesProductchema), productController.update);
 Route.delete("/product/:id", productController.delete);
